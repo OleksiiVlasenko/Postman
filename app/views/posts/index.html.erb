@@ -15,19 +15,21 @@
 
   <tbody>
     <% @posts.each do |post| %>
+
       <tr>
         <td><%= post.name %></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
         <td><%= post.image %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показати', post %></td>
+        <td><%= link_to 'Редагувати', edit_post_path(post) %></td>
+        <td><%= link_to 'Видалити', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'Новий пост', new_post_path %>
