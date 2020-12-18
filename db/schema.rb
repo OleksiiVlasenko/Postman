@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_17_184947) do
+ActiveRecord::Schema.define(version: 2020_12_17_213354) do
+
+  create_table "aufths", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "gender"
+    t.string "birthday"
+    t.integer "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_aufths_on_post_id"
+  end
 
   create_table "authorrs", force: :cascade do |t|
     t.string "first_name"
@@ -39,4 +50,5 @@ ActiveRecord::Schema.define(version: 2020_12_17_184947) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "aufths", "posts"
 end

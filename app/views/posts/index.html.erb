@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
-<%= link_to 'Новий пост', new_post_path %>
-<button type="button" class="btn btn-primary btn-lg">Large button</button>
+
+<%= link_to 'Новий пост', new_post_path %></button>
 <table>
 
   <thead>
@@ -14,7 +14,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  <td><%= @posts.aufths.gender %></td>
   <tbody>
     <% @posts.each do |post| %>
 
@@ -23,6 +23,7 @@
         <td><%= post.title %></td>
         <td><%= post.content %></td>
         <td><%= post.image %></td>
+
         <td><%= link_to 'Показати', post %></td>
         <td><%= link_to 'Редагувати', edit_post_path(post) %></td>
         <td><%= link_to 'Видалити', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
